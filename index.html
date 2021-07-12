@@ -32,7 +32,7 @@
             // console.log('jsToNativeEventCall : $message');
             let messageToSend = document.getElementById("messageToSend").value
             const sendData = { message: messageToSend, from : 'js' };
-            window.webkit.messageHandlers.jsToNativeBridge.postMessage(sendData);
+            webkit.messageHandlers.jsToNativeBridge.postMessage(sendData);
         }
 
         // 네이티브 에서 호출할 메소드
