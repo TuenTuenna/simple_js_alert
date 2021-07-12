@@ -30,9 +30,15 @@
         // js 에서 호출할 메소드
         function jsToNativeEventCall() {
             // console.log('jsToNativeEventCall : $message');
-            let messageToSend = document.getElementById("messageToSend").value
-            const sendData = { message: messageToSend, from : 'js' };
-            webkit.messageHandlers.jsToNativeBridge.postMessage(sendData);
+            // let messageToSend = document.getElementById("messageToSend").value
+            // const sendData = { message: messageToSend, from : 'js' };
+            const sendData = { message: "messageToSend", from : 'js' };
+            try{
+                webkit.messageHandlers.jsToNativeBridge.postMessage(sendData);
+            } catch (err) {
+                alert(err);
+            }
+            
         }
 
         // 네이티브 에서 호출할 메소드
