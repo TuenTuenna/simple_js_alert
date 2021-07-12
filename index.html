@@ -30,9 +30,9 @@
         // js 에서 호출할 메소드
         function jsToNativeEventCall() {
             // console.log('jsToNativeEventCall : $message');
-            // let messageToSend = document.getElementById("messageToSend").value
-            // const sendData = { message: messageToSend, from : 'js' };
-            const sendData = { message: "messageToSend"};
+            let messageToSend = document.getElementById("messageToSend").value
+            const sendData = { message: messageToSend };
+            // const sendData = { message: "messageToSend"};
             try{
                 window.webkit.messageHandlers.callbackHandler.postMessage(sendData);
             } catch (err) {
