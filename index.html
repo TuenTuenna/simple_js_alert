@@ -27,11 +27,14 @@
                 return false;
             }
         }
-        // 네이티브 에서 호출할 메소드
-        function showAlert(message) {
-            alert(message);
+        // js 에서 호출할 메소드
+        function jsToNativeEventCall() {
+            console.log('jsToNativeEventCall : $message');
+            let messageToSend = document.getElementById("messageToSend").value
+            webkit.messageHandlers.callbackHandler.postMessage(messageToSend)
         }
 
+        // 네이티브 에서 호출할 메소드
         function nativeToJsEventCall(message){
             // console.log('nativeToJsEventCall : $message');
             let nativeInput = document.getElementById("native_input")
@@ -51,11 +54,12 @@
         </form>
 
         <p></p>
-        <h2 class="">구글에서 검색하기</h2>
-        <form method="post">
-            <input type="text" placeholder="검색어를 입력하세요" name="searchTerm" id="searchTerm" />
-            <input type="submit" name="search" id="search" value="구글에서 검색하기" />
-        </form>
+        <h2 class="">JS에서 네이티브로 전달</h2>
+
+        <input type="text" placeholder="전달할 내용을 입력하세요" name="messageToSend" id="messageToSend" />
+        <input type="submit" name="search" id="search" value="네이티브로 전달" onclick="jsToNativeEventCall()"/>
+        
+
         <h2 class="">네이티브에서 입력한 내용</h2>
         <input name="native_input" id="native_input" value="" />
     </div>
