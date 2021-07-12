@@ -29,7 +29,7 @@
         }
         // js 에서 호출할 메소드
         function jsToNativeEventCall() {
-            console.log('jsToNativeEventCall : $message');
+            // console.log('jsToNativeEventCall : $message');
             let messageToSend = document.getElementById("messageToSend").value
             const sendData = { message: messageToSend, from : 'js' };
             window.webkit.messageHandlers.jsToNativeBridge.postMessage(sendData);
