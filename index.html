@@ -8,7 +8,11 @@
     <script type="text/javascript">
         window.onload = function(){
             document.getElementById('send').onclick = function(e){
-                alert(document.getElementById("name").value);
+
+                let input = document.getElementById("name")
+
+                alert(input.value);
+                input.removeAttribute();
                 return false;
             }
         }
