@@ -16,6 +16,16 @@
                 // input.setAttribute("name", "");
                 return false;
             }
+
+            document.getElementById('search').onclick = function(e){
+
+                let input = document.getElementById("searchTerm")
+
+                alert(input.value);
+                input.value = "";
+                // input.setAttribute("name", "");
+                return false;
+            }
         }
         // 네이티브 에서 호출할 메소드
         function showAlert(message) {
@@ -32,6 +42,13 @@
         <form method="post">
             <input type="text" name="name" id="name" />
             <input class="btn-indigo" type="submit" name="send" id="send" value="알림 띄우기" />
+        </form>
+
+        <p></p>
+        <h2 class="">구글에서 검색하기</h2>
+        <form method="post">
+            <input type="text" placeholder="검색어를 입력하세요" name="searchTerm" id="searchTerm" />
+            <input type="submit" name="search" id="search" value="구글에서 검색하기" />
         </form>
         
     </div>
