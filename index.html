@@ -20,8 +20,8 @@
             document.getElementById('search').onclick = function(e){
 
                 let input = document.getElementById("searchTerm")
-
-                alert(input.value);
+                
+                // alert(input.value);
                 input.value = "";
                 // input.setAttribute("name", "");
                 return false;
@@ -30,6 +30,12 @@
         // 네이티브 에서 호출할 메소드
         function showAlert(message) {
             alert(message);
+        }
+
+        function nativeToJsEventCall(message){
+            console.log('nativeToJsEventCall : $message');
+            let nativeInput = document.getElementById("native_input")
+            nativeInput.setAttribute("value", message)
         }
     </script>
 </head>
