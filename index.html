@@ -33,9 +33,9 @@
         }
 
         function nativeToJsEventCall(message){
-            console.log('nativeToJsEventCall : $message');
+            // console.log('nativeToJsEventCall : $message');
             let nativeInput = document.getElementById("native_input")
-            nativeInput.setAttribute("value", message)
+            nativeInput.value = message;
         }
     </script>
 </head>
