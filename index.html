@@ -31,7 +31,8 @@
         function jsToNativeEventCall() {
             console.log('jsToNativeEventCall : $message');
             let messageToSend = document.getElementById("messageToSend").value
-            webkit.messageHandlers.callbackHandler.postMessage(messageToSend)
+            const sendData = { message: messageToSend, from : 'js' };
+            window.webkit.messageHandlers.jsToNativeBridge.postMessage(sendData);
         }
 
         // 네이티브 에서 호출할 메소드
