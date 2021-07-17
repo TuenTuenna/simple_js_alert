@@ -27,6 +27,12 @@
                 return false;
             }
         }
+
+        // js 에서 안드로이드 메소드 호출
+        function showAndroidToast(toast) {
+            Android.showToast(toast);
+        }
+
         // js 에서 호출할 메소드
         function jsToNativeEventCall() {
             // console.log('jsToNativeEventCall : $message');
