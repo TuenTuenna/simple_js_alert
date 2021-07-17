@@ -29,12 +29,14 @@
         }
 
         // js 에서 안드로이드 메소드 호출
-        function showAndroidToast(toast) {
-            console.log('showAndroidToast :', toast);
-            Android.showToast(toast);
+        function showAndroidToast() {
+            
+            let androidMessage = document.getElementById("androidMessage")
+            console.log('showAndroidToast :', androidMessage);
+            Android.showToast(androidMessage);
         }
 
-        // js 에서 호출할 메소드
+        // js 에서 ios 호출할 메소드
         function jsToNativeEventCall() {
             // console.log('jsToNativeEventCall : $message');
             let messageToSend = document.getElementById("messageToSend")
@@ -70,9 +72,11 @@
         <p></p>
 
         <h2 class="">JS에서 안드로이드 네이티브 메소드 호출 - showAndroidToast</h2>
-        <input type="button" value="Say hello" onClick="showAndroidToast('Hello Android!')" />
+        <input type="text" placeholder="전달할 내용을 입력하세요" name="androidMessage" id="androidMessage" />
+        <button onclick="showAndroidToast();">안드로이드 네이티브로 전달</button>
 
-        <h2 class="">JS에서 네이티브로 전달</h2>
+
+        <h2 class="">JS에서 iOS 네이티브로 전달</h2>
 
         <input type="text" placeholder="전달할 내용을 입력하세요" name="messageToSend" id="messageToSend" />
         <button onclick="jsToNativeEventCall();">네이티브로 전달</button>
