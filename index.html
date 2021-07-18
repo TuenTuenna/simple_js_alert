@@ -34,6 +34,7 @@
             let androidMessage = document.getElementById("androidMessage")
             console.log('showAndroidToast :', androidMessage);
             Android.showToast(androidMessage.value);
+            androidMessage.value = "";
         }
 
         // js 에서 ios 호출할 메소드
