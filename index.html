@@ -33,6 +33,7 @@
             
             let androidMessage = document.getElementById("androidMessage")
             console.log('showAndroidToast :', androidMessage);
+            // Android 가 브릿지 이름 
             Android.showToast(androidMessage.value);
             androidMessage.value = "";
         }
@@ -43,6 +44,7 @@
             let messageToSend = document.getElementById("messageToSend")
             const sendData = { message: messageToSend.value };
             // const sendData = { message: "messageToSend"};
+            // callbackHandler 가 브릿지 이름 
             try{
                 window.webkit.messageHandlers.callbackHandler.postMessage(sendData);
                 messageToSend.value = "";
